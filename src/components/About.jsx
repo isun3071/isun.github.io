@@ -3,18 +3,16 @@ export default function About() {
     <>
       <section id="about" className="py-16 px-8 md:px-16 lg:px-24">
         <div className="w-full max-w-5xl mx-auto grid md:grid-cols-[240px_1fr] gap-12 items-start">
-          {/* Left — avatar placeholder */}
+          {/* Left — avatar */}
           <div className="flex justify-center md:justify-start">
-            <div
-              className="w-48 h-48 rounded-xl flex items-center justify-center text-5xl font-bold tracking-wide"
+            <img
+              src="/profilepicture.jpg"
+              alt="Ian Sun"
+              className="w-48 h-48 rounded-xl object-cover"
               style={{
-                background: 'linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-primary))',
                 border: '1px solid var(--color-border)',
-                color: 'var(--color-accent)',
               }}
-            >
-              IS
-            </div>
+            />
           </div>
 
           {/* Right — bio */}
