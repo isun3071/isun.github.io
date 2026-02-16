@@ -26,7 +26,7 @@ const RESEARCH = [
 export default function Research() {
   return (
     <>
-      <section id="research" className="py-16 px-8 md:px-16 lg:px-24">
+      <section id="research" className="py-16 px-8 md:px-16 lg:px-24" style={{ backgroundColor: 'rgba(15, 23, 42, 0.5)' }}>
         <div className="w-full max-w-5xl mx-auto">
           {/* Section header */}
           <div className="mb-12">

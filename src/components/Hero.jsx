@@ -24,7 +24,7 @@ export default function Hero() {
             style={{ animationDelay: '0.3s' }}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-[var(--color-text-primary)]"
           >
-            Turning adversary simulation and human&#8209;layer defense into deployable controls.
+            I study attacker TTPs and translate them into practical defenses.
           </h1>
 
           {/* Supporting text */}
@@ -33,7 +33,7 @@ export default function Hero() {
             style={{ animationDelay: '0.5s' }}
             className="mt-6 text-base md:text-lg leading-relaxed max-w-2xl text-[var(--color-text-secondary)]"
           >
-            SecureWorld speaker (Financial Services 2025). Creator of the Dissonance Test. Red team operations and security consulting.
+            SecureWorld speaker (Financial Services 2025). Creator of the Dissonance Test. Red team ops and security consulting.
           </p>
 
           {/* CTAs */}

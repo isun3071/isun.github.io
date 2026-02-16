@@ -18,7 +18,7 @@ const PRACTICE_AREAS = [
 export default function EnterpriseLab() {
   return (
     <>
-      <section id="lab" className="py-16 px-8 md:px-16 lg:px-24" style={{ backgroundColor: 'rgba(15, 23, 42, 0.5)' }}>
+      <section id="lab" className="py-16 px-8 md:px-16 lg:px-24">
         <div className="w-full max-w-5xl mx-auto">
           {/* Section header */}
           <div className="mb-12">

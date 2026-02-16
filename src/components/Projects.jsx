@@ -2,13 +2,14 @@ const PROJECTS = [
   {
     title: 'SafeContractor',
     subtitle: 'Civic Tech Hackathon @ BU 2025',
-    award: 'Best Overall + Best Scam Protection',
+    award: 'Won Best Overall + Best Scam Protection',
     bullets: [
       'Led frontend development in React + TypeScript, designing and implementing a responsive search interface for 70k+ contractor records',
       'Integrated backend APIs into a clean, user-facing verification workflow',
       'Collaborated closely with backend engineers to shape API responses and UI constraints under hackathon time pressure',
       'Helped deliver an AI-enhanced credential summary system to reduce contractor fraud risk',
     ],
+    link: 'https://devpost.com/software/safe-contractors', // placeholder — replace with real URL
   },
 ]
 
@@ -21,9 +22,9 @@ export default function Projects() {
           <div className="mb-12">
             <h2
               className="text-[11px] uppercase tracking-[0.3em] font-semibold mb-4"
-              style={{ color: 'var(--color-accent)' }}
+              style={{ color: '#f97316' }}
             >
-              Building Things
+              Operational Implementations
             </h2>
             <p className="text-3xl md:text-4xl font-bold" style={{ color: 'var(--color-text-primary)' }}>
               Applied Projects
@@ -45,20 +46,35 @@ export default function Projects() {
                 {item.award && (
                   <p
                     className="text-xs font-semibold mb-5"
-                    style={{ color: 'var(--color-accent)' }}
+                    style={{ color: '#f97316' }}
                   >
                     {item.award}
                   </p>
                 )}
-
-                <ul className="space-y-2.5">
+                <br />
+                <ul className="space-y-2.5 mb-5">
                   {item.bullets.map((bullet, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: 'var(--color-accent)' }} />
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: '#f97316' }} />
                       {bullet}
                     </li>
                   ))}
                 </ul>
+                 <br />
+                {item.link && (
+                  <a
+                    href={item.link}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider hover:underline"
+                    style={{ color: '#f97316' }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Project
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </a>
+                )}
               </div>
             ))}
           </div>
