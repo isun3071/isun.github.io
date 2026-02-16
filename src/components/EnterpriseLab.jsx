@@ -54,6 +54,10 @@ export default function EnterpriseLab() {
                   </li>
                 ))}
               </ul>
+              <br />
+              <p className="text-sm leading-relaxed italic" style={{ color: 'var(--color-text-secondary)' }}>
+                All offensive experimentation and pentesting is conducted in controlled environments I own and operate.
+              </p>
             </div>
 
             {/* Right — component list (stylized "topology") */}
