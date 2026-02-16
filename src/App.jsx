@@ -5,6 +5,7 @@ import About from './components/About'
 import FocusAreas from './components/FocusAreas'
 import EnterpriseLab from './components/EnterpriseLab'
 import Research from './components/Research'
+import Projects from './components/Projects'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
       <FocusAreas />
       <EnterpriseLab />
       <Research />
+      <Projects />
       <Footer />
     </main>
   )

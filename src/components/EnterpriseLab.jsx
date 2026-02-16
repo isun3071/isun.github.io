@@ -24,7 +24,7 @@ export default function EnterpriseLab() {
           <div className="mb-12">
             <h2
               className="text-[11px] uppercase tracking-[0.3em] font-semibold mb-4"
-              style={{ color: 'var(--color-accent)' }}
+              style={{ color: '#f97316' }}
             >
               Hands‑On Environment
             </h2>
@@ -40,7 +40,7 @@ export default function EnterpriseLab() {
                 An enterprise Active Directory environment built around a Windows Server domain controller, multiple endpoints (including my daily-driver), Wazuh SIEM, a Ubuntu SMB (Samba) server, and live endpoint protection.
               </p>
                 <br />
-              <h3 className="text-xs uppercase tracking-widest font-semibold mb-4" style={{ color: 'var(--color-accent)' }}>
+              <h3 className="text-xs uppercase tracking-widest font-semibold mb-4" style={{ color: '#f97316' }}>
                 What I Practice Here
               </h3>
               <ul className="space-y-3">
@@ -48,7 +48,7 @@ export default function EnterpriseLab() {
                   <li key={i} className="flex items-start gap-3 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
                     <span
                       className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: 'var(--color-accent)' }}
+                      style={{ backgroundColor: '#f97316' }}
                     />
                     {item}
                   </li>
@@ -58,7 +58,7 @@ export default function EnterpriseLab() {
 
             {/* Right — component list (stylized "topology") */}
             <div className="card-elevated rounded-lg p-8">
-              <h3 className="text-xs uppercase tracking-widest font-semibold mb-6" style={{ color: 'var(--color-accent)' }}>
+              <h3 className="text-xs uppercase tracking-widest font-semibold mb-6" style={{ color: '#f97316' }}>
                 Lab Stack
               </h3>
               <br />

@@ -14,7 +14,7 @@ export default function Footer() {
             <p className="text-2xl md:text-3xl font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
               Let&rsquo;s connect.
             </p>
-
+          <br />
             <div className="space-y-3 text-sm" style={{ color: 'var(--color-text-secondary)' }}>
               <a
                 href="mailto:isun@bu.edu"
@@ -37,7 +37,7 @@ export default function Footer() {
                 iansun20@gmail.com
               </a>
               <a
-                href="https://linkedin.com/in/isun3071"
+                href="https://linkedin.com/in/iansun20"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:underline"

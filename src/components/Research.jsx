@@ -4,21 +4,22 @@ const RESEARCH = [
     subtitle: 'SecureWorld Financial Services 2025',
     category: 'Conference Talk',
     bullets: [
-      'Behavioral hiring control designed to detect fake IT workers and workforce infiltration',
-      'Converts threat intelligence into deployable hiring‑gate safeguards',
-      'Presented to senior leaders from major US financial institutions',
+      'Introduced a behavioral hiring control to ~40 security leaders in financial services',
+      'Positioned workforce infiltration as an upstream governance problem',
+      'Demonstrated how conversational controls in the human layer complement technical defenses',
     ],
+    link: 'https://events.secureworld.io/agenda/financial-services-2-2025/', // placeholder — replace with real URL
   },
   {
     title: 'How Two Interview Questions Can Stop APTs and Seed Security Culture',
     subtitle: 'Medium / LinkedIn',
     category: 'Article',
     bullets: [
-      'Introduces cognitive‑dissonance‑based interview techniques',
-      'Shows how simple conversational controls beat traditional awareness slides',
-      'Practical framework any hiring manager can deploy immediately',
+      'Breaks down the psychological mechanics behind the Dissonance Test',
+      'Provides deployable examples hiring managers can use immediately',
+      'Explains why cognitive dissonance exposes deception better than standard mitigations',
     ],
-    link: '#', // placeholder — replace with real URL
+    link: 'https://medium.com/@iansun20/how-two-interview-questions-can-stop-apts-and-seed-security-culture-b406eade4ca3', // placeholder — replace with real URL
   },
 ]
 
@@ -64,7 +65,7 @@ export default function Research() {
                 <p className="text-xs font-medium mb-5" style={{ color: 'var(--color-text-secondary)' }}>
                   {item.subtitle}
                 </p>
-
+                  <br />
                 <ul className="space-y-2.5 mb-5">
                   {item.bullets.map((bullet, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
@@ -73,7 +74,7 @@ export default function Research() {
                     </li>
                   ))}
                 </ul>
-
+                <br />
                 {item.link && (
                   <a
                     href={item.link}
@@ -82,7 +83,7 @@ export default function Research() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Read Article
+                    {item.category === 'Conference Talk' ? 'See Agenda' : 'View Article'}
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
