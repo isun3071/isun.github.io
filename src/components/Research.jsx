@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+
 const RESEARCH = [
   {
     title: 'The Dissonance Test: What Can\'t Be Faked?',
@@ -24,9 +26,35 @@ const RESEARCH = [
 ]
 
 export default function Research() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <>
-      <section id="research" className="py-16 px-8 md:px-16 lg:px-24" style={{ backgroundColor: 'rgba(15, 23, 42, 0.5)' }}>
+      <section 
+        id="research" 
+        ref={sectionRef}
+        className="py-16 px-8 md:px-16 lg:px-24" 
+        style={{ backgroundColor: 'rgba(15, 23, 42, 0.5)' }}
+      >
         <div className="w-full max-w-5xl mx-auto">
           {/* Section header */}
           <div className="mb-12">
@@ -42,10 +70,24 @@ export default function Research() {
           </div>
 
           <div className="w-full max-w-3xl space-y-6">
-            {RESEARCH.map((item) => (
+            {RESEARCH.map((item, index) => (
               <div
                 key={item.title}
                 className="card-elevated rounded-lg p-8"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'none' : 'translateY(20px)',
+                  transition: isVisible 
+                    ? `opacity 0.8s ease-out ${index * 0.4}s, transform 0.8s ease-out ${index * 0.4}s` 
+                    : 'opacity 0.6s ease-out, transform 0.6s ease-out'
+                }}
+                onTransitionEnd={(e) => {
+                  if (e.propertyName === 'opacity' && isVisible) {
+                    e.currentTarget.style.transition = ''
+                    e.currentTarget.style.opacity = ''
+                    e.currentTarget.style.transform = ''
+                  }
+                }}
               >
                 {/* Tag */}
                 <span

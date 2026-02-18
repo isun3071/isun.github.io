@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+
 const FOCUS_AREAS = [
   {
     title: 'Adversary Simulation',
@@ -41,9 +43,34 @@ const FOCUS_AREAS = [
 ]
 
 export default function FocusAreas() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <>
-      <section className="py-16 px-8 md:px-16 lg:px-24" style={{ backgroundColor: 'rgba(15, 23, 42, 0.5)' }}>
+      <section 
+        ref={sectionRef} 
+        className="py-16 px-8 md:px-16 lg:px-24" 
+        style={{ backgroundColor: 'rgba(15, 23, 42, 0.5)' }}
+      >
         <div className="w-full max-w-5xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-12">
@@ -59,10 +86,24 @@ export default function FocusAreas() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {FOCUS_AREAS.map((area) => (
+            {FOCUS_AREAS.map((area, index) => (
               <div
                 key={area.title}
                 className="card-elevated rounded-lg p-8"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'none' : 'translateY(20px)',
+                  transition: isVisible 
+                    ? `opacity 0.8s ease-out ${index * 0.4}s, transform 0.8s ease-out ${index * 0.4}s` 
+                    : 'opacity 0.6s ease-out, transform 0.6s ease-out'
+                }}
+                onTransitionEnd={(e) => {
+                  if (e.propertyName === 'opacity' && isVisible) {
+                    e.currentTarget.style.transition = ''
+                    e.currentTarget.style.opacity = ''
+                    e.currentTarget.style.transform = ''
+                  }
+                }}
               >
                 <div
                   className="w-11 h-11 rounded-lg flex items-center justify-center mb-5"
