@@ -23,6 +23,17 @@ const RESEARCH = [
     ],
     link: 'https://medium.com/@iansun20/how-two-interview-questions-can-stop-apts-and-seed-security-culture-b406eade4ca3', // placeholder — replace with real URL
   },
+  {
+    title: 'Workforce Identity in the Age of Remote Deception',
+    subtitle: 'SecureWorld Boston (2026)',
+    category: 'Conference Talk',
+    bullets: [
+      'Introduces the bounded vs. unbounded deception lens',
+      'Explains why remote hiring gates unintentionally favor synthetic actors',
+      'Proposes lightweight upstream controls for workforce identity risk',
+    ],
+    link: 'https://events.secureworld.io/agenda/boston-ma-2026/', // placeholder — replace with real URL
+  }
 ]
 
 export default function Research() {
